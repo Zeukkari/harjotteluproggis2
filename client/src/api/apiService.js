@@ -19,7 +19,6 @@ export function parseJSON(response) {
     return text ? JSON.parse(text) : {}
   })
 }
-
 export default class Api {
   static getChannels() {
     return fetch(`${API_URL}/channels`)
@@ -41,7 +40,7 @@ export default class Api {
     const options = {
       method: 'PUT',
       mode: 'cors',
-      body: message
+      body: message,
     }
     return fetch(`${API_URL}/${channelId}`, options)
       .then(checkStatus)
