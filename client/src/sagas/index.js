@@ -1,4 +1,4 @@
-import { all, put, takeEvery, call } from 'redux-saga/effects'
+import { all, put, takeEvery, takeLatest, call } from 'redux-saga/effects'
 
 import API from '../api/apiService'
 
@@ -7,11 +7,11 @@ export function* watchsetChannel() {
 }
 
 export function* watchfetchChannels() {
-  yield takeEvery('FETCH_CHANNELS', fetchChannels)
+  yield takeLatest('FETCH_CHANNELS', fetchChannels)
 }
 
 export function* watchFetchMessages() {
-  yield takeEvery('FETCH_MESSAGES', fetchMessages)
+  yield takeLatest('FETCH_MESSAGES', fetchMessages)
 }
 
 export function* watchPutMessage() {
